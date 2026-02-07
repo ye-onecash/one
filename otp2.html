@@ -253,6 +253,10 @@ body {
   <a href="/">الدخول بحساب آخر</a>
 </div>
 
+<script>
+  document.getElementById('phonetext').innerText = localStorage.getItem('phone')
+</script>
+  
 <div class="otp-overlay" id="otpOverlay">
   <div class="otp-modal">
     <p>الرمز السري غير صحيح</p>
